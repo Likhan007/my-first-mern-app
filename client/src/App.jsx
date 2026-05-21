@@ -5,7 +5,7 @@ function App() {
   const [tasks, setTasks] = useState([]);
 
   const fetchTasks = async () => {
-    const res = await fetch("http://localhost:5000/api/tasks");
+    const res = await fetch("http://13.215.174.214:5000/api/tasks");
     const data = await res.json();
     setTasks(data);
   };
@@ -17,7 +17,7 @@ function App() {
   const addTask = async () => {
     if (!text) return;
 
-    await fetch("http://localhost:5000/api/tasks", {
+    await fetch("http://13.215.174.214:5000/api/tasks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
