@@ -64,7 +64,7 @@ export default function InsertProduct() {
         setError("");
 
         try {
-            const response = await fetch(`http://localhost:3001/updateproduct/${id}`, {
+            const response = await fetch(`http://13.212.33.82:3001/updateproduct/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
