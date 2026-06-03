@@ -1,173 +1,42 @@
-# MERN Stack Application with MongoDB Atlas
+# Inventory Management System MERN CRUD App
 
-A full-stack web application built with **MongoDB**, **Express.js**, **React**, and **Node.js**, connected to **MongoDB Atlas**.
+A simple MERN project that lets the user insert, update, delete & get products from the MongoDB.
 
-## Project Structure
+## To Run App:
 
-```
-my-first-mern-app/
-├── backend/
-│   ├── config/
-│   │   └── db.js                 # MongoDB connection config
-│   ├── controllers/
-│   │   └── userController.js     # User CRUD logic
-│   ├── models/
-│   │   └── User.js               # User MongoDB schema
-│   ├── routes/
-│   │   └── userRoutes.js         # User API routes
-│   ├── server.js                 # Express server entry point
-│   ├── .env.example              # Environment variables template
-│   └── package.json              # Backend dependencies
-│
-├── frontend/
-│   ├── public/
-│   │   └── index.html            # HTML entry point
-│   ├── src/
-│   │   ├── api/
-│   │   │   └── axiosConfig.js    # API client configuration
-│   │   ├── components/
-│   │   │   ├── UserForm.js       # Create user form
-│   │   │   └── UserList.js       # Display users list
-│   │   ├── styles/
-│   │   │   ├── index.css         # Global styles
-│   │   │   ├── App.css           # App styles
-│   │   │   ├── UserForm.css      # Form styles
-│   │   │   └── UserList.css      # List styles
-│   │   ├── App.js                # Main React component
-│   │   └── index.js              # React entry point
-│   └── package.json              # Frontend dependencies
-│
-└── README.md                      # Project documentation
-```
+### 1. Open the folder in vs code and run (npm install) command.
+   
+### 2. In MongoDB Compass:
+   - Create Database: IMS
+   - Collection Name: products
 
-## Prerequisites
+### 3. Then in vs code, open two terminals in split:
+   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/86ed0828-84b8-43b0-89fd-8caa17b88833)
 
-- **Node.js** (v14+)
-- **npm** or **yarn**
-- **MongoDB Atlas** account (free at https://www.mongodb.com/cloud/atlas)
+### 4. In one terminal run these commands (For Backend / Server):
+   - cd Backend
+   - npm run server
 
-## Setup Instructions
+### 5. In the other terminal run these commands (For Frontend / Client):
+   - cd Frontend
+   - cd inventory_management_system
+   - npm start
+   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/93fa528b-bc88-49c2-9922-19b317336b7c)
 
-### 1. Create a MongoDB Atlas Cluster
+## Output:
+### 1. GET (Displaying products)
+   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/09f7d43a-344b-4122-b415-b3736307cf45)
 
-1. Go to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
-2. Sign up or log in
-3. Create a new project and cluster
-4. Get your connection string:
-   - Click "Connect"
-   - Choose "Connect your application"
-   - Copy the connection string
-   - It will look like: `mongodb+srv://username:password@cluster0.mongodb.net/dbname?retryWrites=true&w=majority`
+### 2. POST (Inserting a new product)
+   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/d31e9f36-c119-4a04-9cc0-ddc9fe94b159)
+   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/39ec387f-5efc-4c1f-a7eb-a87612acc17a)
+   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/a6b5c6bf-77d7-41ab-9ca0-3a8bfc71954d)
+   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/3d43e877-c2e6-414b-bef9-410caae1668e)
 
-### 2. Setup Backend
+### 3. PUT (Updating a product)
+   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/d35f7ab0-3fda-4b1c-9055-67ca8c7b2ab6)
+   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/7dd107db-6fde-416d-b5c6-2175916f872f)
 
-```bash
-cd backend
-npm install
-```
-
-Create a `.env` file in the backend folder:
-
-```env
-MONGODB_URI=mongodb+srv://username:password@cluster-name.mongodb.net/database-name?retryWrites=true&w=majority
-PORT=5000
-NODE_ENV=development
-```
-
-**Replace:**
-- `username` - Your MongoDB Atlas username
-- `password` - Your MongoDB Atlas password
-- `cluster-name` - Your cluster name
-- `database-name` - Your database name (e.g., `mern-app`)
-
-Start the backend server:
-
-```bash
-npm run dev
-```
-
-The backend will run on `http://localhost:5000`
-
-### 3. Setup Frontend
-
-In a new terminal, navigate to the frontend folder:
-
-```bash
-cd frontend
-npm install
-npm start
-```
-
-The frontend will run on `http://localhost:3000`
-
-## API Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/users` | Get all users |
-| GET | `/api/users/:id` | Get user by ID |
-| POST | `/api/users` | Create a new user |
-| PUT | `/api/users/:id` | Update user |
-| DELETE | `/api/users/:id` | Delete user |
-| GET | `/api/health` | Health check |
-
-## Usage
-
-1. Open `http://localhost:3000` in your browser
-2. Enter user details (name, email, age) in the form
-3. Click "Create User" to add a user to MongoDB
-4. View all users in the list below
-5. Delete users by clicking the Delete button
-
-## Features
-
-✅ Create, Read, Update, Delete (CRUD) users
-✅ MongoDB Atlas cloud database
-✅ React frontend with modern UI
-✅ Express.js backend API
-✅ Form validation
-✅ Error handling
-✅ Responsive design
-
-## Development
-
-### Backend Commands
-
-```bash
-npm start      # Run server in production
-npm run dev    # Run server with nodemon (auto-reload)
-```
-
-### Frontend Commands
-
-```bash
-npm start      # Start development server
-npm build      # Build for production
-npm test       # Run tests
-```
-
-## Troubleshooting
-
-### MongoDB Connection Error
-- Verify MongoDB URI in `.env` file
-- Check if IP is whitelisted in MongoDB Atlas
-- Ensure database user credentials are correct
-
-### CORS Error
-- Backend CORS is configured to accept requests from frontend
-- Check if backend is running on port 5000
-
-### Port Already in Use
-- Backend: Change `PORT` in `.env` file
-- Frontend: Set `PORT` environment variable before `npm start`
-
-## Resources
-
-- [MongoDB Atlas Documentation](https://docs.atlas.mongodb.com/)
-- [Express.js Documentation](https://expressjs.com/)
-- [React Documentation](https://react.dev/)
-- [Mongoose Documentation](https://mongoosejs.com/)
-
-## License
-
-MIT
+### 4. DELETE (Deleting a product)
+   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/d846ff43-6abd-4baa-9ed6-df736f2d411e)
+   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/cc6368bd-f391-4d6b-b814-c931d48a0878)
