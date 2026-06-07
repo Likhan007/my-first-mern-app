@@ -1,42 +1,133 @@
-# Inventory Management System MERN CRUD App
+# Trello Clone - Next.js
 
-A simple MERN project that lets the user insert, update, delete & get products from the MongoDB.
+A modern project management tool inspired by Trello, built with Next.js, Supabase, and Clerk. This full-stack application provides a comprehensive board experience with drag-and-drop functionality, real-time collaboration, and subscription-based features.
 
-## To Run App:
+## Demo
 
-### 1. Open the folder in vs code and run (npm install) command.
-   
-### 2. In MongoDB Compass:
-   - Create Database: IMS
-   - Collection Name: products
+- Live Preview: https://trello-clone-by-shan.vercel.app
 
-### 3. Then in vs code, open two terminals in split:
-   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/86ed0828-84b8-43b0-89fd-8caa17b88833)
+## Features
 
-### 4. In one terminal run these commands (For Backend / Server):
-   - cd Backend
-   - npm run server
+### Core Functionality
+- **Kanban Board Management**: Create, edit, and organize boards with customizable colors and titles
+- **Drag & Drop Interface**: Intuitive task management with smooth drag-and-drop using @dnd-kit
+- **Column Management**: Create, edit, and delete columns to organize your workflow
+- **Task Management**: Add tasks with titles, descriptions, assignees, priorities, and due dates
+- **Real-time Updates**: Live synchronization of board changes across sessions
 
-### 5. In the other terminal run these commands (For Frontend / Client):
-   - cd Frontend
-   - cd inventory_management_system
-   - npm start
-   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/93fa528b-bc88-49c2-9922-19b317336b7c)
+### Security & Data Protection
+- **Row Level Security (RLS)**: Database-level security ensuring users can only access their own data
+- **User Isolation**: Complete data separation between different user accounts
 
-## Output:
-### 1. GET (Displaying products)
-   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/09f7d43a-344b-4122-b415-b3736307cf45)
+### User Experience
+- **Modern Authentication**: Secure sign-in/sign-up with Clerk integration
+- **Responsive Design**: Beautiful UI built with Tailwind CSS and Shadcn UI components
+- **Dashboard Overview**: Centralized view of all your boards with statistics
+- **Advanced Filtering**: Filter tasks by priority, assignee, and due dates
+- **Search Functionality**: Quick search across boards and tasks
 
-### 2. POST (Inserting a new product)
-   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/d31e9f36-c119-4a04-9cc0-ddc9fe94b159)
-   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/39ec387f-5efc-4c1f-a7eb-a87612acc17a)
-   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/a6b5c6bf-77d7-41ab-9ca0-3a8bfc71954d)
-   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/3d43e877-c2e6-414b-bef9-410caae1668e)
+### Subscription Features
+- **Free Tier**: Limited to 1 board for free users
+- **Premium Plans**: Unlimited boards and advanced features via Clerk's pricing integration
+- **Upgrade Prompts**: Seamless upgrade flow for free users
 
-### 3. PUT (Updating a product)
-   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/d35f7ab0-3fda-4b1c-9055-67ca8c7b2ab6)
-   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/7dd107db-6fde-416d-b5c6-2175916f872f)
+### Technical Features
+- **TypeScript**: Full type safety throughout the application
+- **Server-Side Rendering**: Optimized performance with Next.js 15
+- **Database Integration**: Supabase for real-time data management
+- **Component Architecture**: Modular, reusable components with feature-based organization
 
-### 4. DELETE (Deleting a product)
-   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/d846ff43-6abd-4baa-9ed6-df736f2d411e)
-   ![image](https://github.com/mhy20401/Inventory-Management-System-MERN-CRUD-Project/assets/99351091/cc6368bd-f391-4d6b-b814-c931d48a0878)
+## Screenshots
+
+![Home](https://i.ibb.co/b5HDBpvn/trello-clone-home.png)
+- Modern landing page with feature highlights
+
+![Sign Up](https://i.ibb.co/HTGNY3gj/trello-clone-signup.png)
+- User registration with Clerk
+
+![Dashboard](https://i.ibb.co/d03BSbpJ/trello-clone-dashboard.png)
+- User dashboard with board overview and statistics
+
+![Filters](https://i.ibb.co/5gk56gKV/trello-clone-dropdown.png)
+- Filter Dropdown on Dashboard Page
+
+![Board](https://i.ibb.co/sJK02cFR/trello-clone-edit-board.png)
+- Interactive kanban board with drag-and-drop functionality
+
+![Pricing](https://i.ibb.co/ZpRsPFRL/trello-clone-pricing.png)
+- Subscription plans and pricing options
+
+## Run Locally
+
+Clone the project
+
+```bash
+git clone https://github.com/Mshandev/Trello-Clone.git
+```
+
+Go to the project directory
+
+```bash
+cd trello-clone
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Setup Environment Variables
+
+Create a `.env` file in the root folder and add the following variables:
+
+```env
+# Clerk Authentication
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+
+# Supabase Database
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+Start the development server
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Tech Stack
+
+### Frontend
+- **[Next.js 15](https://nextjs.org/)** - React framework with App Router
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[Shadcn UI](https://ui.shadcn.com/)** - Beautiful, accessible components
+- **[Lucide React](https://lucide.dev/)** - Icon library
+
+### Backend & Database
+- **[Supabase](https://supabase.com/)** - Backend-as-a-Service with PostgreSQL
+- **[Clerk](https://clerk.com/)** - Authentication and user management
+
+### Drag & Drop
+- **[@dnd-kit](https://dndkit.com/)** - Modern drag-and-drop toolkit for React
+
+### Development Tools
+- **[ESLint](https://eslint.org/)** - Code linting
+- **[PostCSS](https://postcss.org/)** - CSS processing
+
+## Deployment
+
+The application is deployed on Vercel.
+
+## Contributing
+
+Contributions are always welcome!
+Just raise an issue, and we will discuss it.
+
+## Feedback
+
+If you have any feedback, please reach out to me [here](https://www.linkedin.com/in/muhammad-shan-full-stack-developer/)
